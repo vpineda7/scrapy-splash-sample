@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for zalora project
+# Scrapy settings for newco project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,18 +9,12 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'zalora'
+BOT_NAME = 'newco'
 
-SPIDER_MODULES = ['zalora.spiders']
-NEWSPIDER_MODULE = 'zalora.spiders'
+SPIDER_MODULES = ['newco.spiders']
+NEWSPIDER_MODULE = 'newco.spiders'
 
 SPLASH_URL = 'http://splash:8050'
-
-# Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'zalora (+http://www.yourdomain.com)'
-
-# Obey robots.txt rules
-ROBOTSTXT_OBEY = True
 
 DOWNLOADER_MIDDLEWARES = {
     'scrapy_splash.SplashCookiesMiddleware': 723,
@@ -36,18 +30,19 @@ DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
 
 HTTPCACHE_STORAGE = 'scrapy_splash.SplashAwareFSCacheStorage'
 
+# Crawl responsibly by identifying yourself (and your website) on the user-agent
+#USER_AGENT = 'newco (+http://www.yourdomain.com)'
+
+# Obey robots.txt rules
+ROBOTSTXT_OBEY = True
+
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 CONCURRENT_REQUESTS = 32
 
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 10
-
-#ITEM_PIPELINES = {'zalora.pipelines.ZaloraImagesPipeline': 1}
-
-#IMAGES_STORE = '/code/images/zalora/wanita/atasan'
-
+#DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -67,13 +62,13 @@ DOWNLOAD_DELAY = 10
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'zalora.middlewares.ZaloraSpiderMiddleware': 543,
+#    'newco.middlewares.NewcoSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'zalora.middlewares.MyCustomDownloaderMiddleware': 543,
+#    'newco.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -85,7 +80,7 @@ DOWNLOAD_DELAY = 10
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'zalora.pipelines.ZaloraPipeline': 300,
+#    'newco.pipelines.NewcoPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)

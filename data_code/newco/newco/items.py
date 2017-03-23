@@ -8,6 +8,11 @@
 import scrapy
 
 
+class NewcoItem(scrapy.Item):
+    # define the fields for your item here like:
+    # name = scrapy.Field()
+    pass
+
 class ZaloraItem(scrapy.Item):
     # define the fields for your item here like:
     name = scrapy.Field()
@@ -16,4 +21,13 @@ class ZaloraItem(scrapy.Item):
     price = scrapy.Field()
     image_urls = scrapy.Field()
     images = scrapy.Field()
-    #image_paths = scrapy.Field()
+
+class BerrybenkaItem(scrapy.Item):
+    # define the fields for your item here like:
+    name = scrapy.Field()
+    brand = scrapy.Field()
+    description = scrapy.Field()
+    url = scrapy.Field()
+    price = scrapy.Field()
+    image_urls = scrapy.Field()
+    images = scrapy.Field()

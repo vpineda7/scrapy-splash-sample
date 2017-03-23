@@ -7,12 +7,12 @@ from scrapy_splash import SplashRequest
 from scrapy.loader import ItemLoader
 from scrapy.http.headers import Headers
 
-from zalora.items import ZaloraItem
+from newco.items import ZaloraItem
 
 RENDER_HTML_URL = "http://splash:8050/render.html"
 
 
-class BasicSpider(scrapy.Spider):
+class ZaloraSpider(scrapy.Spider):
     name = "zalora"
     allowed_domains = ["zalora.co.id"]
     MAIN_URL = 'https://www.zalora.co.id/'
@@ -31,7 +31,6 @@ class BasicSpider(scrapy.Spider):
     def parse(self, response):
 
         item_selector = response.xpath('//a[@class="b-catalogList__itmLink itm-link"]/@href')
-        idx = 0
         for url in item_selector.extract():
             item_detail_url = self.MAIN_URL+url
             yield scrapy.Request(url=item_detail_url, callback=self.parse_item)
